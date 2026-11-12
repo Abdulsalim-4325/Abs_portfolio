@@ -1,0 +1,14 @@
+# Python & Environments
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+.env
+
+# Google Service Account Credentials (CRITICAL: NEVER COMMIT)
+backend/service_account.json
+*credentials*.json
+
+# IDE & OS
+.vscode/
+.DS_Store
