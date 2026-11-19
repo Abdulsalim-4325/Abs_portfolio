@@ -1,14 +1,33 @@
-# Python & Environments
+# Secrets & Credentials (CRITICAL - NEVER COMMIT)
+.env
+*.env
+backend/.env
+*credentials*.json
+*service_account*.json
+*client_secret*.json
+*.pem
+*.key
+
+# Python & Virtual Environments
 __pycache__/
 *.py[cod]
-venv/
+*$py.class
 .venv/
-.env
+venv/
+env/
 
-# Google Service Account Credentials (CRITICAL: NEVER COMMIT)
-backend/service_account.json
-*credentials*.json
+# Local Uploads & Temp Bundles
+backend/uploads/*
+!backend/uploads/.gitkeep
+portfolio_bundle.txt
+chunk_*
 
-# IDE & OS
-.vscode/
+# OS & Editor Junk
 .DS_Store
+Thumbs.db
+*:Zone.Identifier
+.vscode/
+.idea/
+EOF
+
+mkdir -p backend/uploads && touch backend/uploads/.gitkeep

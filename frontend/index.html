@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdul Salim | Engineer Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient Crimson Background Glows -->
+  <div class="ambient-glow glow-hero"></div>
+  <div class="ambient-glow glow-mid"></div>
+
+  <!-- ==================== TRANSPARENT BORDERLESS NAVBAR ==================== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <!-- Top Left Official Transparent Logo -->
+      <a href="#home" class="brand-logo glow-target">
+        <img src="assets/logo.svg" alt="ABSCODE Official Logo" class="official-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+        <span class="logo-fallback" style="display:none;">ABSCODE</span>
+      </a>
+
+      <!-- Center Navigation Links (Smooth Scroll to Designated Sections) -->
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-item active glow-target">Home</a>
+        <a href="#projects" class="nav-item glow-target">Projects</a>
+        <a href="#education-skills" class="nav-item glow-target">Education &amp; Skills</a>
+        <a href="#experience-contact" class="nav-item glow-target">Experience &amp; Contact</a>
+      </nav>
+
+      <!-- Top Right Quick Action (Laptop/Desktop Only) & Mobile Menu Trigger -->
+      <div class="nav-status">
+        <a href="./assets/resume.pdf" target="_blank" rel="noopener" class="resume-nav-btn glow-target" id="resumeNavBtn" title="Open Developer Resume (PDF)">
+  <i class="bx bx-file"></i>
+  <span>RESUME</span>
+</a>
+
+        <button type="button" class="insta-logo-btn desktop-only-contact glow-target open-contact-sheet-btn" aria-label="Open Contact Options">
+          <i class="bx bx-paper-plane"></i>
+        </button>
+
+        <button class="mobile-menu-btn glow-target" id="mobileMenuBtn" aria-label="Toggle Menu">
+          <i class="bx bx-menu-alt-right"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Toast Notification for Automated Instagram DM Message -->
+  <div id="instaToast" class="insta-toast">
+    <i class="bx bx-check-circle"></i>
+    <span id="instaToastText">Default message copied! Paste in Instagram DM &amp; send.</span>
+  </div>
+
+  <main class="main-wrapper">
+
+    <!-- ==================== PAGE 1: FULL-SCREEN HERO SECTION ==================== -->
+    <section class="hero-section" id="home">
+      
+      <!-- Giant Background Display Text ("ENGINEER") -->
+      <div class="hero-bg-text-wrapper" aria-hidden="true">
+        <h1 class="hero-bg-text">PORTFOLIO</h1>
+      </div>
+
+      <!-- Center Cutout Portrait -->
+      <div class="hero-center">
+        <div class="portrait-container">
+          <img 
+            src="assets/image.png" 
+            alt="Abdul Salim Portrait" 
+            class="hero-portrait" 
+            id="userPortrait"
+            onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80'"
+          />
+        </div>
+      </div>
+
+      <div class="hero-grid">
+        
+        <!-- LEFT MID TO BOTTOM -->
+        <div class="hero-left">
+          <p class="script-greeting">Hello, I'm</p>
+          <h2 class="hero-name glow-text-hover">
+            ABDUL<br />SALIM
+          </h2>
+
+          <div class="role-transition-box glow-target">
+            <span class="role-prefix">I AM A </span>
+            <div class="role-rotatorWrapper">
+              <span class="role-dynamic" id="dynamicRole">BACKEND SYSTEMS ENGINEER</span>
+              <span class="cursor-bar">|</span>
+            </div>
+          </div>
+
+          <p class="hero-description">
+            I architect and build resilient, high-throughput backend systems, distributed APIs, and cryptographic security frameworks. Passionate about clean microservice architecture, asynchronous processing, and engineering precision that scales.
+          </p>
+
+          <!-- Mobile-Only Island "Contact" Button -->
+          <div class="hero-cta-row mobile-only-contact">
+            <button type="button" class="contact-island-btn glow-target open-contact-sheet-btn" id="heroContactBtn">
+              <i class="bx bx-message-rounded-dots"></i>
+              <span>Contact</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- RIGHT MID TO BOTTOM: Clean Updatable Achievements -->
+        <div class="hero-right">
+          <div class="stats-list">
+            
+            <div class="stat-item glow-target">
+              <span class="stat-number" id="statHackathons">03</span>
+              <div class="stat-label">
+                <span>HACKATHONS</span>
+                <span>PARTICIPATED</span>
+              </div>
+            </div>
+
+            <div class="stat-item glow-target">
+              <span class="stat-number" id="statProjects">06</span>
+              <div class="stat-label">
+                <span>PROJECTS</span>
+                <span>ARCHITECTED</span>
+              </div>
+            </div>
+
+            <div class="stat-item glow-target">
+              <span class="stat-number" id="statPapers">01<small>+</small></span>
+              <div class="stat-label">
+                <span>RESEARCH</span>
+                <span>PAPERS</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== PAGE 2: 3D CIRCULAR PROJECT CAROUSEL ==================== -->
+    <section class="projects-section" id="projects">
+      <div class="section-header">
+        <h3 class="section-title glow-text-hover">SELECTED PROJECTS</h3>
+        <div class="header-line"></div>
+        <!-- Opens the GitHub Repositories Popup Modal -->
+        <button type="button" class="view-all-link glow-target" id="openGithubModalBtn">
+          <i class="bx bxl-github"></i>
+          <span>VIEW ALL GITHUB</span>
+          <i class="bx bx-right-arrow-alt"></i>
+        </button>
+      </div>
+
+      <!-- 3D Circular Carousel Wrapper (Cards Open Live Deployed Websites, NOT GitHub) -->
+      <div class="carousel-outer-wrapper">
+        
+        <button type="button" class="carousel-side-btn side-prev glow-target" id="prevProjBtn" aria-label="Previous Project">
+          <i class="bx bx-chevron-left"></i>
+        </button>
+
+        <div class="carousel-stage" id="carouselStage">
+          <div class="carousel-ring" id="carouselRing">
+
+            <!-- PROJECT CARD 1 (Opens Live Deployed Website) -->
+            <article class="project-card-3d glow-target" data-index="0">
+              <a href="https://valar-runtime.vercel.app" target="_blank" rel="noopener" class="project-img-link" draggable="false">
+                <img src="./assets/VALAAR_Image.png" alt="V.A.L.A.R. AI Runtime" draggable="false" />
+              </a>
+              <div class="project-card-body">
+                <h4>V.A.L.A.R. AI RUNTIME</h4>
+                <p>Autonomous Alexa &amp; MCP agent core powered by AWS Bedrock Runtime and FastAPI.</p>
+                <a href="https://valar-runtime.vercel.app" target="_blank" rel="noopener" class="view-website-btn glow-target">
+                  <span>View website</span>
+                  <i class="bx bx-right-arrow-alt"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- PROJECT CARD 2 (Opens Live Deployed Website) -->
+            <article class="project-card-3d glow-target" data-index="1">
+              <a href="https://ater-vjpu.onrender.com" target="_blank" rel="noopener" class="project-img-link" draggable="false">
+                <img src="./assets/ATERS_Image.png" alt="ATERS Emergency Response" draggable="false" />
+              </a>
+              <div class="project-card-body">
+                <h4>ATERS EMERGENCY RESPONSE</h4>
+                <p>Real-time ambulance tracking and automated hospital dispatch system.</p>
+                <a href="https://ater-vjpu.onrender.com" target="_blank" rel="noopener" class="view-website-btn glow-target">
+                  <span>View website</span>
+                  <i class="bx bx-right-arrow-alt"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- PROJECT CARD 3 (Opens Live Deployed Website) -->
+            <article class="project-card-3d glow-target" data-index="2">
+              <a href="https://threat-intel-api-u5pa.onrender.com" target="_blank" rel="noopener" class="project-img-link" draggable="false">
+                <img src="./assets/THREAT_ENGINE_Image.png" alt="STIX 2.1 Threat Engine" draggable="false" />
+              </a>
+              <div class="project-card-body">
+                <h4>STIX 2.1 THREAT ENGINE</h4>
+                <p>Automated cyber threat intelligence aggregator and STIX 2.1 normalization pipeline.</p>
+                <a href=" https://threat-intel-dashboard-cmxjf9fsgwi7hv7trk6xca.streamlit.app" target="_blank" rel="noopener" class="view-website-btn glow-target">
+                  <span>View website</span>
+                  <i class="bx bx-right-arrow-alt"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- PROJECT CARD 4 (Opens Live Deployed Website) -->
+            <article class="project-card-3d glow-target" data-index="3">
+              <a href="https://b2b-feedback-analytics.onrender.com" target="_blank" rel="noopener" class="project-img-link" draggable="false">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="B2B Feedback Analytics API" draggable="false" />
+              </a>
+              <div class="project-card-body">
+                <h4>B2B FEEDBACK ANALYTICS API</h4>
+                <p>High-throughput asynchronous feedback ingestion engine using FastAPI, Celery, and Redis.</p>
+                <a href="https://b2b-feedback-analytics.onrender.com" target="_blank" rel="noopener" class="view-website-btn glow-target">
+                  <span>View website</span>
+                  <i class="bx bx-right-arrow-alt"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- PROJECT CARD 5 (Opens Live Deployed Website) -->
+            <article class="project-card-3d glow-target" data-index="4">
+              <a href="https://feature-flag-routing.onrender.com" target="_blank" rel="noopener" class="project-img-link" draggable="false">
+                <img src="./assets/Webhook_dispatcher_image.jpg" alt="Feature Flag Routing API" draggable="false" />
+              </a>
+              <div class="project-card-body">
+                <h4>FEATURE FLAG ROUTING API</h4>
+                <p>OpenFeature-compliant routing engine with sub-millisecond Redis caching and PostgreSQL audit logs.</p>
+                <a href="https://feature-flag-routing.onrender.com" target="_blank" rel="noopener" class="view-website-btn glow-target">
+                  <span>View website</span>
+                  <i class="bx bx-right-arrow-alt"></i>
+                </a>
+              </div>
+            </article>
+
+             
+
+          </div>
+        </div>
+
+        <button type="button" class="carousel-side-btn side-next glow-target" id="nextProjBtn" aria-label="Next Project">
+          <i class="bx bx-chevron-right"></i>
+        </button>
+
+      </div>
+
+      <div class="carousel-dots" id="carouselDots"></div>
+    </section>
+
+    <!-- ==================== PAGE 3: EDUCATION (LEFT) & SKILLS (RIGHT TOP) ==================== -->
+    <section class="edu-skills-section" id="education-skills">
+      <div class="three-col-grid">
+
+        <!-- LEFT PART: Education & Research Publications -->
+        <div class="col-panel">
+          <h3 class="panel-heading glow-text-hover">EDUCATION &amp; RESEARCH</h3>
+
+          <span class="sub-label-red">ACADEMIC DEGREE</span>
+
+          <div class="timeline-item glow-target">
+            <div class="timeline-row">
+              <h4>B.Tech in Computer Science &amp; Engineering</h4>
+              <span class="timeline-year">2024 – 2028</span>
+            </div>
+            <p class="timeline-inst">Sister Nivedita University, Kolkata</p>
+            <p class="timeline-detail">Specialization: Cyber Security, IoT &amp; Blockchain &bull; CGPA: 7.81 / 10.0</p>
+          </div>
+
+          <span class="sub-label-red mt-md">RESEARCH PUBLICATIONS</span>
+
+          <div class="timeline-item glow-target">
+            <div class="timeline-row">
+              <h4>Scalable FHIR-Compliant Blockchain Framework</h4>
+              <span class="timeline-year">IEEE &bull; 2026</span>
+            </div>
+            <p class="timeline-inst">Healthcare Data Exchange Architecture</p>
+            <p class="timeline-detail">Evaluated architectural trade-offs between on-chain auditability and off-chain encrypted storage across 25+ works.</p>
+          </div>
+
+          <div class="timeline-item glow-target">
+            <div class="timeline-row">
+              <h4>Off-Chain PII Redaction in Distributed FHIR</h4>
+              <span class="timeline-year">RESEARCH</span>
+            </div>
+            <p class="timeline-inst">Empirical Performance &amp; Latency Evaluation</p>
+            <p class="timeline-detail">NLP entity de-identification via Microsoft Presidio with cryptographic Merkle tree audit trails.</p>
+          </div>
+        </div>
+
+        <!-- RIGHT PART TOP & BOTTOM: Technical Skills & Engineering Workflow -->
+        <div class="col-panel">
+          <h3 class="panel-heading glow-text-hover">TECHNICAL SKILLS</h3>
+
+          <span class="sub-label-red">CORE STACK &amp; INFRASTRUCTURE</span>
+          <div class="skills-pill-grid">
+            <span class="skill-pill glow-target">PYTHON</span>
+            <span class="skill-pill glow-target">FASTAPI</span>
+            <span class="skill-pill glow-target">JAVA</span>
+            <span class="skill-pill glow-target">PYDANTIC V2</span>
+            <span class="skill-pill glow-target">POSTGRESQL</span>
+            <span class="skill-pill glow-target">SQLALCHEMY ASYNC</span>
+            <span class="skill-pill glow-target">REDIS</span>
+            <span class="skill-pill glow-target">CELERY</span>
+            <span class="skill-pill glow-target">DOCKER &amp; COMPOSE</span>
+            <span class="skill-pill glow-target">PYTEST</span>
+            <span class="skill-pill glow-target">MYSQL</span>
+            <span class="skill-pill glow-target">GIT &amp; WSL 2</span>
+            <span class="skill-pill glow-target">HTML / CSS / JS</span>
+          </div>
+
+          <span class="sub-label-red mt-md">ENGINEERING PROCESS</span>
+          <div class="process-list">
+            <div class="process-step glow-target">
+              <span class="step-num">01</span>
+              <div class="step-icon"><i class="bx bx-layer"></i></div>
+              <div class="step-text">
+                <h5>ARCHITECT &amp; SCHEMA DESIGN</h5>
+                <p>Strict Pydantic v2 contracts, normalized PostgreSQL models, and modular folder structures.</p>
+              </div>
+            </div>
+            <div class="process-step glow-target">
+              <span class="step-num">02</span>
+              <div class="step-icon"><i class="bx bx-code-block"></i></div>
+              <div class="step-text">
+                <h5>ASYNC &amp; DISTRIBUTED BUILD</h5>
+                <p>Non-blocking FastAPI endpoints, Celery task queues, and Redis caching layers.</p>
+              </div>
+            </div>
+            <div class="process-step glow-target">
+              <span class="step-num">03</span>
+              <div class="step-icon"><i class="bx bx-shield-quarter"></i></div>
+              <div class="step-text">
+                <h5>LOAD TEST &amp; CONTAINERIZE</h5>
+                <p>Locust stress testing, automated Pytest suites, and multi-container Docker orchestration.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAR RIGHT ACCENT CARD: Quote / Philosophy Card with Contact Popup Trigger -->
+        <div class="col-panel quote-red-panel glow-target">
+          <div class="quote-mark">“</div>
+          <p class="quote-body">
+            Good engineering is not just how fast it runs in dev, but how resiliently it holds under production pressure.
+          </p>
+          <p class="quote-signature">Abdul Salim</p>
+
+          <div class="quote-footer">
+            <p>LET'S ARCHITECT<br />SOMETHING RESILIENT<br />TOGETHER.</p>
+            <button type="button" class="mini-contact-icon-btn glow-target open-contact-sheet-btn" aria-label="Open Contact Options">
+              <i class="bx bx-right-arrow-alt"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== PAGE 4: EXPERIENCE (LEFT) & CONTACTS + FEEDBACK (RIGHT) ==================== -->
+    <section class="exp-contact-section" id="experience-contact">
+      <div class="two-col-asymmetric">
+
+        <!-- LEFT SIDE: Experience & Hackathons -->
+        <div class="exp-left-panel">
+          <div class="let-work-header">
+            <h3 class="big-section-title glow-text-hover">
+              EXPERIENCE &amp;<br />ACHIEVEMENTS
+            </h3>
+            <p class="section-subtext">
+              Hands-on systems architecture, competitive hackathons, and distributed backend engineering milestones.
+            </p>
+          </div>
+
+          <div class="experience-timeline">
+
+            <div class="exp-card glow-target">
+              <div class="exp-meta">
+                <span class="exp-badge">HACKATHON</span>
+                <span class="exp-date">OCT 2026</span>
+              </div>
+              <h4>Amazon Developer Hackathon — Builder (V.A.L.A.R.)</h4>
+              <p>Engineered an autonomous logic and action runtime integrating AWS Bedrock Runtime, Model Context Protocol (MCP), and FastAPI.</p>
+            </div>
+
+            <div class="exp-card glow-target">
+              <div class="exp-meta">
+                <span class="exp-badge">TEAM GRIFFIN CODERS</span>
+                <span class="exp-date">OCT 2026</span>
+              </div>
+              <h4>Ambulance Tracker &amp; Emergency Response System (ATERS)</h4>
+              <p>Collaborated on complete system architecture, emergency dispatch optimization, and course presentation.</p>
+            </div>
+
+            <div class="exp-card glow-target">
+              <div class="exp-meta">
+                <span class="exp-badge">SAP LABS INDIA &amp; SNU</span>
+                <span class="exp-date">APR 2025</span>
+              </div>
+              <h4>HackFest '25 — First Round Participant</h4>
+              <p>Designed and pitched software prototypes during the first round of the regional HackFest '25 hackathon.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE: Direct Socials (Top) & Streamlined Verified Feedback Form (Below) -->
+        <div class="contact-right-panel">
+
+          <!-- RIGHT TOP: 4 Direct Channels & Socials -->
+          <div class="contact-top-box">
+            <div class="contact-top-header">
+              <span class="sub-label-red">DIRECT CHANNELS &amp; SOCIALS</span>
+            </div>
+            
+            <div class="contact-links-grid">
+              <!-- 1. Email with Default Subject & Message Ready to Send -->
+              <!-- REPLACE abdulsalim@example.com with your actual email -->
+              <a 
+                href="mailto:abdulsalim432005@gmai.com?subject=Opportunity%20%2F%20Project%20Collaboration%20with%20Abdul%20Salim%20(ABSCODE)&body=Hello%20Abdul%20Salim%2C%0A%0AName%3A%20%5BYour%20Name%20%2F%20Company%5D%0APurpose%3A%20%5BJob%20Offer%20%2F%20Internship%20%2F%20Project%20Collaboration%5D%0A%0AI%20recently%20reviewed%20your%20ABSCODE%20engineering%20portfolio%20and%20would%20love%20to%20connect%20with%20you%20regarding%20an%20opportunity.%0A%0ABest%20regards%2C" 
+                class="contact-row-item glow-target"
+              >
+                <span class="contact-icon-circle"><i class="bx bx-envelope"></i></span>
+                <span class="contact-value">Email Direct (Ready to Send)</span>
+              </a>
+
+              <!-- 2. Instagram DM with Default Name, Purpose & Connect Message -->
+              <!-- Option 1: Instagram Profile -->
+        <a 
+          href="https://www.instagram.com/_absalim__/" 
+          target="_blank" 
+          rel="noopener" 
+          class="sheet-option-card insta-option glow-target"
+          id="sheetInstaOption"
+        >
+          <div class="sheet-opt-icon"><i class="bx bxl-instagram"></i></div>
+          <div class="sheet-opt-info">
+            <h5>Instagram Profile</h5>
+            <p>Visit my profile to connect and send a message</p>
+          </div>
+          <i class="bx bx-right-arrow-alt sheet-opt-arrow"></i>
+        </a>
+
+              <!-- 3. GitHub Opens Official GitHub Profile -->
+              <a 
+                href="https://github.com/AbdulSalim-4325" 
+                target="_blank" 
+                rel="noopener" 
+                class="contact-row-item glow-target"
+              >
+                <span class="contact-icon-circle"><i class="bx bxl-github"></i></span>
+                <span class="contact-value">github.com/AbdulSalim-4325</span>
+              </a>
+
+              <!-- 4. LinkedIn Profile -->
+              <a 
+                href="https://www.linkedin.com/in/abdul-salim-engineer" 
+                target="_blank" 
+                rel="noopener" 
+                class="contact-row-item glow-target"
+              >
+                <span class="contact-icon-circle"><i class="bx bxl-linkedin"></i></span>
+                <span class="contact-value">LinkedIn / Developer Profile</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT BELOW: Feedback Form (Unlocks ONLY after Verified + Name + >=10 Letters Message) -->
+          <div class="feedback-bottom-box">
+            <div class="feedback-header">
+              <h4>FEEDBACK &amp; INQUIRY</h4>
+            </div>
+
+            <form class="feedback-form" id="feedbackForm">
+              <input type="hidden" id="verificationToken" value="" />
+              <input type="hidden" id="verifiedProviderInput" value="" />
+
+              <!-- Row 1: Name/Company & Email/ID -->
+              <div class="form-row-two">
+                <div class="input-group">
+                  <label for="senderName">YOUR NAME OR COMPANY NAME</label>
+                  <input type="text" id="senderName" class="glow-target" placeholder="e.g. Rahul Sharma or Google India Pvt Ltd" required />
+                </div>
+
+                <div class="input-group">
+                  <div class="label-with-counter">
+                    <label for="verifyEmailInput" id="verifyAccountLabel">EMAIL ADDRESS (FOR 6-DIGIT OTP)</label>
+                    <span class="inline-verify-badge" id="verifyBadge">UNVERIFIED</span>
+                  </div>
+                  <div class="inline-email-verify-box">
+                    <input type="text" id="verifyEmailInput" class="glow-target" placeholder="you@example.com" />
+                    <button type="button" class="inline-verify-btn glow-target" id="sendOtpBtn">Send OTP</button>
+                  </div>
+                  <div id="oauthPopupLinkRow" style="display: none; margin-top: 6px; text-align: right;">
+                    <a href="#" id="oauthDirectLink" style="font-size: 0.72rem; color: #ff1e2e; text-decoration: underline;">Or click here to authenticate via official popup &nearr;</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4-Option Inline Verification Bar -->
+              <div class="verify-methods-bar">
+                <span class="verify-bar-label">Authenticate via:</span>
+                <button type="button" class="method-pill active-pill glow-target" id="pillEmailOtp">
+                  <i class="bx bx-envelope"></i> Email OTP
+                </button>
+                <button type="button" class="method-pill glow-target" id="googleVerifyBtn">
+                  <i class="bx bxl-google"></i> Google
+                </button>
+                <button type="button" class="method-pill glow-target" id="githubVerifyBtn">
+                  <i class="bx bxl-github"></i> GitHub
+                </button>
+                <button type="button" class="method-pill glow-target" id="instaVerifyBtn">
+                  <i class="bx bxl-instagram"></i> Instagram
+                </button>
+              </div>
+
+              <!-- Pop-down 6-Digit OTP Input Row -->
+              <div class="otp-code-row" id="otpCodeRow" style="display: none;">
+                <input type="text" id="otpCodeInput" class="glow-target" maxlength="6" placeholder="Enter 6-digit OTP code from your email" />
+                <button type="button" class="otp-confirm-btn glow-target" id="confirmOtpBtn">Verify Code</button>
+              </div>
+
+              <p class="verify-status-text" id="verifyStatusText"></p>
+
+              <!-- Star Rating (Min 1 Star, Max 5 Stars) -->
+              <div class="input-group">
+                <label>RATING / IMPRESSION (MIN 1★ — MAX 5★)</label>
+                <div class="star-rating" id="starRating">
+                  <button type="button" class="star-btn active glow-target" data-val="1">★</button>
+                  <button type="button" class="star-btn active glow-target" data-val="2">★</button>
+                  <button type="button" class="star-btn active glow-target" data-val="3">★</button>
+                  <button type="button" class="star-btn active glow-target" data-val="4">★</button>
+                  <button type="button" class="star-btn active glow-target" data-val="5">★</button>
+                </div>
+              </div>
+
+              <!-- Feedback Message (Min 10 Letters, Max 1,000 Words) -->
+              <div class="input-group">
+                <div class="label-with-counter">
+                  <label for="feedbackMsg">FEEDBACK MESSAGE (MIN 10 LETTERS)</label>
+                  <span class="word-counter" id="wordCounter">0 chars &bull; 0 / 1000 words</span>
+                </div>
+                <textarea id="feedbackMsg" class="glow-target" rows="4" placeholder="Write at least 10 characters (up to 1,000 words)..." required></textarea>
+              </div>
+
+              <!-- Submit Button Alone -->
+              <div class="form-submit-row">
+                <button type="submit" class="submit-btn glow-target" id="submitFeedbackBtn" disabled>
+                  <span>SUBMIT</span>
+                  <i class="bx bx-check-shield"></i>
+                </button>
+                <span class="form-status-msg" id="formStatusMsg"></span>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== GITHUB REPOSITORIES POPUP MODAL ==================== -->
+  <div class="github-modal-backdrop" id="githubModalBackdrop" aria-hidden="true">
+    <div class="github-modal-window" role="dialog" aria-modal="true" aria-labelledby="githubModalTitle">
+      
+      <div class="github-modal-header">
+        <div>
+          <span class="sheet-tag">SOURCE CODE &amp; REPOSITORIES</span>
+          <h4 id="githubModalTitle">GitHub Hub &amp; Project Repositories</h4>
+        </div>
+        <button type="button" class="sheet-close-btn glow-target" id="closeGithubModalBtn" aria-label="Close GitHub Popup">
+          <i class="bx bx-x"></i>
+        </button>
+      </div>
+
+      <!-- MAIN HERO OPTION: MY GITHUB PROFILE (BIGGER THAN OTHERS) -->
+      <a 
+        href="https://github.com/AbdulSalim-4325" 
+        target="_blank" 
+        rel="noopener" 
+        class="my-github-hero-card glow-target"
+      >
+        <div class="my-gh-left">
+          <div class="my-gh-icon">
+            <i class="bx bxl-github"></i>
+          </div>
+          <div class="my-gh-text">
+            <span class="my-gh-badge">OFFICIAL PROFILE</span>
+            <h5>MY GITHUB — @AbdulSalim-4325</h5>
+            <p>Explore all repositories, daily contribution graph, system architectures, and open-source work.</p>
+          </div>
+        </div>
+        <div class="my-gh-cta">
+          <span>Open Profile</span>
+          <i class="bx bx-link-external"></i>
+        </div>
+      </a>
+
+      <div class="gh-repo-list-label">DIRECT PROJECT REPOSITORIES</div>
+
+      <!-- MAPPED PROJECT REPOSITORIES LIST -->
+      <div class="gh-projects-grid">
+        
+        <a href="https://github.com/Abdulsalim-4325/valaar" target="_blank" rel="noopener" class="gh-repo-item glow-target">
+          <i class="bx bx-git-repo-forked gh-repo-icon"></i>
+          <div class="gh-repo-info">
+            <h6>V.A.L.A.R. AI Runtime</h6>
+            <span>AWS Bedrock &bull; MCP &bull; FastAPI</span>
+          </div>
+          <i class="bx bx-right-arrow-alt gh-repo-arrow"></i>
+        </a>
+
+        <a href="https://github.com/AbdulSalim-4325/aters-emergency-system" target="_blank" rel="noopener" class="gh-repo-item glow-target">
+          <i class="bx bx-git-repo-forked gh-repo-icon"></i>
+          <div class="gh-repo-info">
+            <h6>ATERS Emergency System</h6>
+            <span>Real-Time Ambulance Dispatch</span>
+          </div>
+          <i class="bx bx-right-arrow-alt gh-repo-arrow"></i>
+        </a>
+
+        <a href="https://github.com/Abdulsalim-4325/automated-threat-intelligence" target="_blank" rel="noopener" class="gh-repo-item glow-target">
+          <i class="bx bx-git-repo-forked gh-repo-icon"></i>
+          <div class="gh-repo-info">
+            <h6>STIX 2.1 Threat Engine</h6>
+            <span>FastAPI &bull; PostgreSQL &bull; Pydantic v2</span>
+          </div>
+          <i class="bx bx-right-arrow-alt gh-repo-arrow"></i>
+        </a>
+
+        <a href="https://github.com/AbdulSalim-4325/b2b-feedback-analytics-api" target="_blank" rel="noopener" class="gh-repo-item glow-target">
+          <i class="bx bx-git-repo-forked gh-repo-icon"></i>
+          <div class="gh-repo-info">
+            <h6>B2B Feedback Analytics API</h6>
+            <span>FastAPI &bull; Celery &bull; Redis &bull; Locust</span>
+          </div>
+          <i class="bx bx-right-arrow-alt gh-repo-arrow"></i>
+        </a>
+
+        <a href="https://github.com/AbdulSalim-4325/high-performance-feature-flag-routing-api" target="_blank" rel="noopener" class="gh-repo-item glow-target">
+          <i class="bx bx-git-repo-forked gh-repo-icon"></i>
+          <div class="gh-repo-info">
+            <h6>Feature Flag Routing API</h6>
+            <span>OpenFeature &bull; Redis Caching</span>
+          </div>
+          <i class="bx bx-right-arrow-alt gh-repo-arrow"></i>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE-UP BOTTOM SHEET POPUP FOR ALL "CONTACT" BUTTONS ==================== -->
+  <div class="contact-sheet-backdrop" id="contactSheetBackdrop" aria-hidden="true">
+    <div class="contact-bottom-sheet" role="dialog" aria-modal="true" aria-labelledby="contactSheetTitle">
+      <div class="sheet-drag-handle"></div>
+      <div class="sheet-header">
+        <div>
+          <span class="sheet-tag">DIRECT CONNECT</span>
+          <h4 id="contactSheetTitle">Connect with Abdul Salim</h4>
+        </div>
+        <button type="button" class="sheet-close-btn glow-target" id="closeContactSheetBtn" aria-label="Close Contact Menu">
+          <i class="bx bx-x"></i>
+        </button>
+      </div>
+        <!-- Option 1: Instagram Profile -->
+       <a 
+  href="https://www.instagram.com/_absalim__/" 
+  target="_blank" 
+  rel="noopener" 
+  class="contact-row-item glow-target"
+>
+  <span class="contact-icon-circle"><i class="bx bxl-instagram"></i></span>
+  <span class="contact-value">Instagram (@_absalim__)</span>
+</a>
+      
+
+        <!-- Option 2: WhatsApp Direct with Automated Default Message -->
+        <!-- REPLACE 919876543210 with your WhatsApp number -->
+        <a 
+          href="https://wa.me/919038807851?text=Hello%20Abdul%20Salim!%20Name%3A%20%5BMy%20Name%20%2F%20Company%5D%20%7C%20Purpose%3A%20%5BWork%20%2F%20Offer%20%2F%20Collaboration%5D.%20I%20explored%20your%20ABSCODE%20portfolio%20and%20would%20love%20to%20connect%20with%20you%20regarding%20an%20opportunity!" 
+          target="_blank" 
+          rel="noopener" 
+          class="sheet-option-card whatsapp-option glow-target"
+        >
+          <div class="sheet-opt-icon"><i class="bx bxl-whatsapp"></i></div>
+          <div class="sheet-opt-info">
+            <h5>WhatsApp</h5>
+            <p>Opens chat with default work/connect message typed</p>
+          </div>
+          <i class="bx bx-right-arrow-alt sheet-opt-arrow"></i>
+        </a>
+
+        <!-- Option 3: Email with Default Subject & Body -->
+        <!-- REPLACE abdulsalim@example.com with your actual email -->
+        <a 
+          href="mailto:abdulsalim432005@gmail.com?subject=Opportunity%20%2F%20Project%20Collaboration%20with%20Abdul%20Salim%20(ABSCODE)&body=Hello%20Abdul%20Salim%2C%0A%0AName%3A%20%5BYour%20Name%20%2F%20Company%5D%0APurpose%3A%20%5BJob%20Offer%20%2F%20Internship%20%2F%20Project%20Collaboration%5D%0A%0AI%20recently%20reviewed%20your%20ABSCODE%20engineering%20portfolio%20and%20would%20love%20to%20connect%20with%20you%20regarding%20an%20opportunity.%0A%0ABest%20regards%2C" 
+          class="sheet-option-card email-option glow-target"
+        >
+          <div class="sheet-opt-icon"><i class="bx bx-envelope"></i></div>
+          <div class="sheet-opt-info">
+            <h5>Direct Email</h5>
+            <p>Opens mail app with subject &amp; default mail ready</p>
+          </div>
+          <i class="bx bx-right-arrow-alt sheet-opt-arrow"></i>
+        </a>
+
+        <!-- Option 4: Resume Download -->
+        <a 
+  href="./assets/resume.pdf" 
+  target="_blank" 
+  rel="noopener" 
+  class="sheet-option-card resume-option glow-target"
+  id="sheetResumeOption"
+>
+  <div class="sheet-opt-icon"><i class="bx bx-file"></i></div>
+  <div class="sheet-opt-info">
+    <h5>View / Download Resume (PDF)</h5>
+    <p>Open verified credentials, research &amp; skills PDF</p>
+  </div>
+  <i class="bx bx-right-arrow-alt sheet-opt-arrow"></i>
+</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-bar">
+    <p>&copy; 2026 ABDUL SALIM (ABSCODE). ALL RIGHTS RESERVED.</p>
+    <p>ENGINEERED WITH PRECISION</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
